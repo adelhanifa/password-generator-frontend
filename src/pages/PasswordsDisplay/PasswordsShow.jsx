@@ -19,8 +19,8 @@ function PasswordsShow({ passwords, messagesActions }) {
 
   const renderGridItem = (data) => {
     return (
-      <div className="p-xs-12 p-sm-12 p-md-6 p-lg-4">
-        <div className="product-grid-item card">
+      <div className="p-col-12 p-xs-12 p-sm-12 p-md-6 p-lg-4">
+        <div className="product-grid-item card p-m-2">
           <div className="p-inputgroup">
             <InputText value={data} disabled />
             <Button

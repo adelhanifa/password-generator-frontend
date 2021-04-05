@@ -51,7 +51,7 @@ export const Creators = {
     return async (dispatch) => {
       dispatch({ type: Types.PASSWORDS_GENERATE_REQUEST });
       try {
-        const response = await fetch(`https://pass-generator-adel.herokuapp.com/api/`, {
+        const response = await fetch(`https://pass-gen-adel.herokuapp.com/api/`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),

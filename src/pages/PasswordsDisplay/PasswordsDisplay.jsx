@@ -52,21 +52,25 @@ function PasswordsDisplay({ passwordsState, passwordsActions }) {
       passwords: false,
     });
     const { minLength, specialCharacters, numbers, passwords } = form;
-
+    let count = 0;
     if (
       minLength < 8 ||
       minLength > 99 ||
       minLength < numbers + specialCharacters
     ) {
+      count++
       setInvalidForme({ ...invalidForm, minLength: true });
     }
     if (specialCharacters < 0 || specialCharacters > 99) {
+      count++
       setInvalidForme({ ...invalidForm, specialCharacters: true });
     }
     if (numbers < 0 || numbers > 99) {
+      count++
       setInvalidForme({ ...invalidForm, numbers: true });
     }
     if (numbers + specialCharacters > 99) {
+      count++
       setInvalidForme({
         ...invalidForm,
         numbers: true,
@@ -75,15 +79,15 @@ function PasswordsDisplay({ passwordsState, passwordsActions }) {
     }
 
     if (passwords < 10 || passwords > 1000) {
+      count++
       setInvalidForme({ ...invalidForm, passwords: true });
     }
 
-    generatePasswords();
+    generatePasswords(count);
   };
 
-  const generatePasswords = () => {
-    const { minLength, specialCharacters, numbers, passwords } = invalidForm;
-    if (!minLength && !specialCharacters && !numbers && !passwords) {
+  const generatePasswords = (count) => {
+    if (count === 0) {
       passwordsActions.getPasswords(form);
     }
   };
@@ -97,7 +101,7 @@ function PasswordsDisplay({ passwordsState, passwordsActions }) {
           number of:
         </h4>
         <div className="p-fluid p-formgrid p-grid p-mt-1">
-          <div className="p-field p-xs-12 p-sm-12 p-md-6 p-lg-3">
+          <div className="p-field p-col-12 p-sm-12 p-md-6 p-lg-3">
             <Tooltip target=".tooltip-passwords" position="bottom">
               <p className="p-mt-2">How many passwords will be generated?</p>
               <ul
@@ -120,7 +124,7 @@ function PasswordsDisplay({ passwordsState, passwordsActions }) {
             />
           </div>
 
-          <div className="p-field p-sm-12 p-md-6 p-lg-3">
+          <div className="p-field p-col-12 p-sm-12 p-md-6 p-lg-3">
             <Tooltip target=".tooltip-minLength" position="bottom">
               <p className="p-mt-2">
                 What is the minimum length for each password?
@@ -146,7 +150,7 @@ function PasswordsDisplay({ passwordsState, passwordsActions }) {
             />
           </div>
 
-          <div className="p-field p-sm-12 p-md-6 p-lg-3">
+          <div className="p-field p-col-12 p-sm-12 p-md-6 p-lg-3">
             <Tooltip target=".tooltip-specialCharacters" position="bottom">
               <p className="p-mt-2">
                 How many special characters will be in each password?
@@ -175,7 +179,7 @@ function PasswordsDisplay({ passwordsState, passwordsActions }) {
             />
           </div>
 
-          <div className="p-field p-sm-12 p-md-6 p-lg-3">
+          <div className="p-field p-col-12 p-sm-12 p-md-6 p-lg-3">
             <Tooltip target=".tooltip-numbers" position="bottom">
               <p className="p-mt-2">
                 How many numbers will be in each password?

@@ -23,4 +23,7 @@
  - Node.js 
  - Mongo DB
  - Express.js
- 
+
+ ### Deployment 
+ - Heroku for Back end .
+ - Netlify for Front end
