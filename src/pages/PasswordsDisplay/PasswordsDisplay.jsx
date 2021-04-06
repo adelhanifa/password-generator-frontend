@@ -95,10 +95,10 @@ function PasswordsDisplay({ passwordsState, passwordsActions }) {
   return (
     <div className="passwordsDisplay p-px-5">
       <div>
-        <h2>To generate passwords just fill the form below:</h2>
+        <h2>To generate passwords please fill the form below:</h2>
         <h4 className="p-mt-6">
-          all fields are mandatory and should be numbers, each field write a
-          number of:
+          all fields are mandatory and should be numbers, you can enter a
+          value of:
         </h4>
         <div className="p-fluid p-formgrid p-grid p-mt-1">
           <div className="p-field p-col-12 p-sm-12 p-md-6 p-lg-3">

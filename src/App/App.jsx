@@ -24,7 +24,7 @@ function App() {
       </Switch>
       </main>
       <footer className="p-ai-end p-mt-auto">
-        <h3 className="p-text-center">thank you for useing this password generator</h3>
+        <h3 className="p-text-center">thank you for using this password generator</h3>
         <h4 className="p-text-center aboutme" 
             onClick={()=> window.open('https://adelhanifa.github.io/portfolio/Adel%20Hanifa%20__%20Lebenslaauf.pdf', '_blank')}>about me</h4>
       </footer>
