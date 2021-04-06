@@ -21,7 +21,6 @@
 
 ### Backeend libraries and framewarks:
  - Node.js 
- - Mongo DB
  - Express.js
 
  ### Deployment 
